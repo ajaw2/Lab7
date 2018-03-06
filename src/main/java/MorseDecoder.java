@@ -25,13 +25,11 @@ import java.util.Scanner;
  * each symbol in a table and return the corresponding letter value.
  */
 public class MorseDecoder {
-
     /**
      * Bin size for power binning. We compute power over bins of this size. You will probably not
      * need to modify this value.
      */
     private static final int BIN_SIZE = 100;
-
     /**
      * Compute power measurements for fixed-size bins of WAV samples.
      * <p>
@@ -44,7 +42,6 @@ public class MorseDecoder {
      */
     private static double[] binWavFilePower(final WavFile inputFile)
             throws IOException, WavFileException {
-
         /*
          * We should check the results of getNumFrames to ensure that they are safe to cast to int.
          */
@@ -55,6 +52,7 @@ public class MorseDecoder {
         for (int binIndex = 0; binIndex < totalBinCount; binIndex++) {
             // Get the right number of samples from the inputFile
             // Sum all the samples together and store them in the returnBuffer
+            returnBuffer[binIndex] = sampleBuffer[binIndex];
         }
         return returnBuffer;
     }
@@ -81,12 +79,10 @@ public class MorseDecoder {
          * There are four conditions to handle. Symbols should only be output when you see
          * transitions. You will also have to store how much power or silence you have seen.
          */
-
         // if ispower and waspower
         // else if ispower and not waspower
         // else if issilence and wassilence
         // else if issilence and not wassilence
-
         return "";
     }
 
